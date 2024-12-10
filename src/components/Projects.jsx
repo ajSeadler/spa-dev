@@ -1,32 +1,30 @@
-import { FaGithub } from "react-icons/fa"; // Import the GitHub icon
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    description: "A sleek portfolio showcasing my skills and projects.",
+    title: "Skate Tracker",
+    description:
+      "A social app for skateboarders to track tricks, earn points, and share photos or videos of their tricks with the community.",
     link: "#",
     repo: "https://github.com/example/portfolio-website",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ2W8wrVTKVr-mVXiIXT1Yz-gBJPAw820q0Q&s",
-    techStack: ["React", "CSS", "JavaScript"],
+    image: "/skate-tracker.png",
+    techStack: ["React.js", "Postgres", "Express.js", "Node.js"],
   },
   {
-    title: "E-Commerce App",
+    title: "Circle of Fifths Viewer",
     description:
-      "A modern, secure, and fully responsive e-commerce application.",
+      "An interactive Circle of Fifths tool to explore musical key relationships, view notation, and discover chords for each scale.",
     link: "#",
     repo: "https://github.com/example/e-commerce-app",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ2W8wrVTKVr-mVXiIXT1Yz-gBJPAw820q0Q&s",
-    techStack: ["Next.js", "Node.js", "MongoDB"],
+    image: "/cof.png",
+    techStack: ["React.js", "VexFlow", "JavaScript", "CSS", "Node.js"],
   },
   {
     title: "Chat Application",
     description: "Real-time chat app with end-to-end encryption.",
     link: "#",
     repo: "https://github.com/example/chat-application",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ2W8wrVTKVr-mVXiIXT1Yz-gBJPAw820q0Q&s",
+    image: "/ds-site.png",
     techStack: ["Socket.IO", "Express", "React"],
   },
 ];
@@ -54,7 +52,9 @@ const Projects = () => {
                   >
                     <h3 className="project-title">
                       {project.title}{" "}
-                      <span className="project-link-icon">↗</span>
+                      <span className="project-link-icon">
+                        <FaExternalLinkAlt />
+                      </span>
                     </h3>
                   </a>
                   <p className="project-description">{project.description}</p>
@@ -92,17 +92,19 @@ const Projects = () => {
         </div>
       </section>
       <section className="call-to-action">
-        <h2>Let’s Collaborate</h2>
-        <p>
+        <h2 className="cta-heading">Let’s Collaborate</h2>
+        <p className="cta-description">
           Interested in working together or learning more about my journey? Feel
           free to reach out!
         </p>
-        <a href="/resume.pdf" className="cta-button">
-          View My Github
-        </a>
-        <a href="https://linkedin.com/in/yourprofile" className="cta-button">
-          Connect on LinkedIn
-        </a>
+        <div className="button-group">
+          <a href="/resume.pdf" className="cta-button">
+            View My Github
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" className="cta-button">
+            Connect on LinkedIn
+          </a>
+        </div>
       </section>
     </>
   );

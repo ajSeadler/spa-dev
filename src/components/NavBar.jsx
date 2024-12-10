@@ -4,13 +4,11 @@ import {
   FaUser,
   FaCode,
   FaEnvelope,
-  FaGithub,
-  FaLinkedin,
   FaMoon,
   FaSun,
   FaBars,
   FaTimes,
-  FaGraduationCap,
+  FaCogs,
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
@@ -58,6 +56,10 @@ const Navbar = () => {
     setIsMenuOpen((prevOpen) => !prevOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -71,6 +73,7 @@ const Navbar = () => {
           <Link
             to="/"
             className={`nav-link ${isActive("/") ? "active-link" : ""}`}
+            onClick={closeMenu} // Close menu on click
           >
             <FaHome className="icon" />
             Home
@@ -80,6 +83,7 @@ const Navbar = () => {
           <Link
             to="/about"
             className={`nav-link ${isActive("/about") ? "active-link" : ""}`}
+            onClick={closeMenu} // Close menu on click
           >
             <FaUser className="icon" />
             About
@@ -89,6 +93,7 @@ const Navbar = () => {
           <Link
             to="/projects"
             className={`nav-link ${isActive("/projects") ? "active-link" : ""}`}
+            onClick={closeMenu} // Close menu on click
           >
             <FaCode className="icon" />
             Projects
@@ -100,15 +105,17 @@ const Navbar = () => {
             className={`nav-link ${
               isActive("/education") ? "active-link" : ""
             }`}
+            onClick={closeMenu} // Close menu on click
           >
-            <FaGraduationCap className="icon" />
-            Education
+            <FaCogs className="icon" />
+            Experience
           </Link>
         </li>
         <li>
           <Link
             to="/contact"
             className={`nav-link ${isActive("/contact") ? "active-link" : ""}`}
+            onClick={closeMenu} // Close menu on click
           >
             <FaEnvelope className="icon" />
             Contact
@@ -116,33 +123,15 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Action Buttons */}
-      <div className="nav-actions">
+      {/* Mobile Menu Toggle */}
+      <div className="mobile-actions" style={{ display: "flex", gap: "20px" }}>
         <button className="theme-toggle" onClick={toggleTheme}>
           {isDarkMode ? <FaSun /> : <FaMoon />}
         </button>
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-icon"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-icon"
-        >
-          <FaLinkedin />
-        </a>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
-
-      {/* Mobile Menu Toggle */}
-      <button className="menu-toggle" onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </button>
     </nav>
   );
 };

@@ -23,7 +23,7 @@ const About = () => {
 
         {/* Description */}
         <p className="about-description">
-          Hi there! I'm Anthony Seadler, though most people call me AJ. I'm a
+          My name is Anthony Seadler, though most people call me AJ. I'm a
           full-stack developer with a Web Development certificate from the
           University of Oklahoma and Fullstack Academy. Currently, I’m pursuing
           a Bachelor of Science in Cybersecurity at Southern Nazarene
@@ -31,37 +31,77 @@ const About = () => {
           security.
         </p>
 
+        <p className="about-description">
+          Below you can find some more information about me and the tech I
+          develop with, along with some real world skills I posess!
+        </p>
+
         {/* Programming Languages */}
         <div className="about-languages">
           <h3 className="languages-heading">Tech Stack</h3>
           <ul className="languages-list">
             <li>
-              <FaJsSquare className="language-icon" title="JavaScript" />
+              <FaJsSquare
+                className="language-icon"
+                title="JavaScript"
+                style={{ color: "#F7DF1E" }}
+              />
             </li>
             <li>
-              <SiTypescript className="language-icon" title="Git" />
+              <SiTypescript
+                className="language-icon"
+                title="TypeScript"
+                style={{ color: "#007ACC" }}
+              />
             </li>
             <li>
-              <FaHtml5 className="language-icon" title="HTML5" />
+              <FaHtml5
+                className="language-icon"
+                title="HTML5"
+                style={{ color: "#E34F26" }}
+              />
             </li>
             <li>
-              <FaCss3Alt className="language-icon" title="CSS3" />
+              <FaCss3Alt
+                className="language-icon"
+                title="CSS3"
+                style={{ color: "#1572B6" }}
+              />
             </li>
             <li>
-              <FaReact className="language-icon" title="React.js" />
+              <FaReact
+                className="language-icon"
+                title="React.js"
+                style={{ color: "#61DAFB" }}
+              />
             </li>
             <li>
-              <FaNodeJs className="language-icon" title="Node.js" />
+              <FaNodeJs
+                className="language-icon"
+                title="Node.js"
+                style={{ color: "#339933" }}
+              />
             </li>
             <li>
-              <FaDatabase className="language-icon" title="PostgreSQL" />
+              <FaDatabase
+                className="language-icon"
+                title="PostgreSQL"
+                style={{ color: "#336791" }}
+              />
             </li>
             <li>
-              <FaPython className="language-icon" title="Python" />
+              <FaPython
+                className="language-icon"
+                title="Python"
+                style={{ color: "#3776AB" }}
+              />
             </li>
-
             <li>
-              <FaVuejs className="language-icon" title="Git" />
+              <FaVuejs
+                className="language-icon"
+                title="Vue.js"
+                style={{ color: "#42B883" }}
+              />
             </li>
           </ul>
         </div>
@@ -74,7 +114,7 @@ const About = () => {
             <li>Scripting</li>
             <li>Intrusion Detection</li>
             <li>Linux OS</li>
-            <li>Windows OS</li>
+            <li>Windows Admin</li>
             <li>Mac OS</li>
             <li>Problem Solving</li>
             <li>Debugging</li>
@@ -83,7 +123,7 @@ const About = () => {
 
         {/* Call-to-Action */}
         <div className="about-cta">
-          <Link to="/projects" className="cta-button">
+          <Link to="/projects" className="about-cta-button">
             Take a Look at My Projects
           </Link>
         </div>
