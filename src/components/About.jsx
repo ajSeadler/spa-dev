@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
 import {
   FaJsSquare,
@@ -11,124 +10,220 @@ import {
   FaVuejs,
 } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
+import { Box, Container, Grid, Typography, Button, Chip } from "@mui/material";
 
 const About = () => {
   return (
-    <section className="about" id="about">
-      <div className="about-container">
-        {/* Heading */}
-        <h2 className="about-heading">
-          About <span className="highlight">Me</span>
-        </h2>
+    <>
+      <div id="about"></div>
+      <Box sx={{ py: 6 }}>
+        <Container maxWidth="lg">
+          {/* Heading */}
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{ fontWeight: 600, mb: 4 }}
+          >
+            About <span style={{ color: "#1976d2" }}>Me</span>
+          </Typography>
 
-        {/* Description */}
-        <p className="about-description">
-          My name is Anthony Seadler, though most people call me AJ. I'm a
-          full-stack developer with a Web Development certificate from the
-          University of Oklahoma and Fullstack Academy. Currently, I’m pursuing
-          a Bachelor of Science in Cybersecurity at Southern Nazarene
-          University, combining my development experience with a strong focus on
-          security.
-        </p>
+          {/* Description */}
+          <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+            My name is Anthony Seadler, though most people call me AJ. I'm a
+            full-stack developer with a Web Development certificate from the
+            University of Oklahoma and Fullstack Academy. Currently, I’m
+            pursuing a Bachelor of Science in Cybersecurity at Southern Nazarene
+            University, combining my development experience with a strong focus
+            on security.
+          </Typography>
 
-        <p className="about-description">
-          Below you can find some more information about me and the tech I
-          develop with, along with some real world skills I posess!
-        </p>
+          <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+            Below you can find some more information about me and the tech I
+            develop with, along with some real-world skills I possess!
+          </Typography>
 
-        {/* Programming Languages */}
-        <div className="about-languages">
-          <h3 className="languages-heading">Tech Stack</h3>
-          <ul className="languages-list">
-            <li>
-              <FaJsSquare
-                className="language-icon"
-                title="JavaScript"
-                style={{ color: "#F7DF1E" }}
-              />
-            </li>
-            <li>
-              <SiTypescript
-                className="language-icon"
-                title="TypeScript"
-                style={{ color: "#007ACC" }}
-              />
-            </li>
-            <li>
-              <FaHtml5
-                className="language-icon"
-                title="HTML5"
-                style={{ color: "#E34F26" }}
-              />
-            </li>
-            <li>
-              <FaCss3Alt
-                className="language-icon"
-                title="CSS3"
-                style={{ color: "#1572B6" }}
-              />
-            </li>
-            <li>
-              <FaReact
-                className="language-icon"
-                title="React.js"
-                style={{ color: "#61DAFB" }}
-              />
-            </li>
-            <li>
-              <FaNodeJs
-                className="language-icon"
-                title="Node.js"
-                style={{ color: "#339933" }}
-              />
-            </li>
-            <li>
-              <FaDatabase
-                className="language-icon"
-                title="PostgreSQL"
-                style={{ color: "#336791" }}
-              />
-            </li>
-            <li>
-              <FaPython
-                className="language-icon"
-                title="Python"
-                style={{ color: "#3776AB" }}
-              />
-            </li>
-            <li>
-              <FaVuejs
-                className="language-icon"
-                title="Vue.js"
-                style={{ color: "#42B883" }}
-              />
-            </li>
-          </ul>
-        </div>
+          {/* Tech Stack */}
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h4" sx={{ fontWeight: 600, mb: 2 }}>
+              Tech Stack
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="JavaScript"
+                  icon={<FaJsSquare />}
+                  sx={{
+                    backgroundColor: "#F7DF1E",
+                    color: "#000",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="TypeScript"
+                  icon={<SiTypescript />}
+                  sx={{
+                    backgroundColor: "#007ACC",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="HTML5"
+                  icon={<FaHtml5 />}
+                  sx={{
+                    backgroundColor: "#E34F26",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="CSS3"
+                  icon={<FaCss3Alt />}
+                  sx={{
+                    backgroundColor: "#1572B6",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="React.js"
+                  icon={<FaReact />}
+                  sx={{
+                    backgroundColor: "#61DAFB",
+                    color: "#000",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="Node.js"
+                  icon={<FaNodeJs />}
+                  sx={{
+                    backgroundColor: "#339933",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="PostgreSQL"
+                  icon={<FaDatabase />}
+                  sx={{
+                    backgroundColor: "#336791",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="Python"
+                  icon={<FaPython />}
+                  sx={{
+                    backgroundColor: "#3776AB",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={6} sm={4} md={3}>
+                <Chip
+                  label="Vue.js"
+                  icon={<FaVuejs />}
+                  sx={{
+                    backgroundColor: "#42B883",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                />
+              </Grid>
+            </Grid>
+          </Box>
 
-        {/* Core Skills */}
-        <div className="about-skills">
-          <h3 className="skills-heading">Core Skills</h3>
-          <ul className="skills-list">
-            <li>Full-stack Development</li>
-            <li>Scripting</li>
-            <li>Intrusion Detection</li>
-            <li>Linux OS</li>
-            <li>Windows Admin</li>
-            <li>Mac OS</li>
-            <li>Problem Solving</li>
-            <li>Debugging</li>
-          </ul>
-        </div>
+          {/* Core Skills */}
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h4" sx={{ fontWeight: 600, mb: 2 }}>
+              Core Skills
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Full-stack Development</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Scripting</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Intrusion Detection</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Linux OS</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Windows Admin</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Mac OS</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Problem Solving</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="body1">Debugging</Typography>
+              </Grid>
+            </Grid>
+          </Box>
 
-        {/* Call-to-Action */}
-        <div className="about-cta">
-          <Link to="/projects" className="about-cta-button">
-            Take a Look at My Projects
-          </Link>
-        </div>
-      </div>
-    </section>
+          {/* Call-to-Action */}
+          <Box sx={{ textAlign: "center", mt: 10 }}>
+            <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
+              Take a Look at My Projects
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/projects"
+              sx={{
+                textTransform: "none",
+                fontWeight: 500,
+                padding: "10px 20px",
+                fontSize: "16px",
+              }}
+            >
+              View Projects
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

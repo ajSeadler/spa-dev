@@ -1,15 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  FaHome,
-  FaUser,
-  FaCode,
-  FaEnvelope,
-  FaMoon,
-  FaSun,
-  FaBars,
-  FaTimes,
-  FaCogs,
-} from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -75,7 +65,6 @@ const Navbar = () => {
             className={`nav-link ${isActive("/") ? "active-link" : ""}`}
             onClick={closeMenu} // Close menu on click
           >
-            <FaHome className="icon" />
             Home
           </Link>
         </li>
@@ -85,7 +74,6 @@ const Navbar = () => {
             className={`nav-link ${isActive("/about") ? "active-link" : ""}`}
             onClick={closeMenu} // Close menu on click
           >
-            <FaUser className="icon" />
             About
           </Link>
         </li>
@@ -95,7 +83,6 @@ const Navbar = () => {
             className={`nav-link ${isActive("/projects") ? "active-link" : ""}`}
             onClick={closeMenu} // Close menu on click
           >
-            <FaCode className="icon" />
             Projects
           </Link>
         </li>
@@ -107,8 +94,16 @@ const Navbar = () => {
             }`}
             onClick={closeMenu} // Close menu on click
           >
-            <FaCogs className="icon" />
-            Experience
+            Education
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/career"
+            className={`nav-link ${isActive("/career") ? "active-link" : ""}`}
+            onClick={closeMenu} // Close menu on click
+          >
+            Work
           </Link>
         </li>
         <li>
@@ -117,7 +112,6 @@ const Navbar = () => {
             className={`nav-link ${isActive("/contact") ? "active-link" : ""}`}
             onClick={closeMenu} // Close menu on click
           >
-            <FaEnvelope className="icon" />
             Contact
           </Link>
         </li>

@@ -1,79 +1,68 @@
-/* eslint-disable react/no-unescaped-entities */
-import { FaGraduationCap, FaBuilding, FaMedkit } from "react-icons/fa";
-import { PiShareNetworkFill } from "react-icons/pi";
+import { Box, Container, Typography } from "@mui/material";
 
 const Education = () => {
   return (
-    <div className="education-and-work">
-      {/* Work Experience Section */}
-      <section className="work-experience">
-        <h2 className="section-heading">
-          <FaBuilding className="section-icon" />
-          Work Experience
-        </h2>
-        <div className="work-item">
-          <h3 className="work-title">
-            <FaMedkit className="work-icon" />
-            Treatment Team Manager
-          </h3>
-          <p className="work-company">Community Pathways Unlimited </p>
-          <p className="work-duration">
-            Dates of Employment: August 2015 - May 2020
-          </p>
-          <p className="work-description">
-            Collaborate with clinicians to ensure timely submission of treatment
-            plan extension information. Maintain communication with the
-            Department of Mental Health, updating approved service units and
-            notifying relevant parties. Track extension renewal dates, assign
-            staff for completion, and supervise the prior authorization
-            specialist's work.
-          </p>
-        </div>
-        <div className="work-item">
-          <h3 className="work-title">
-            <PiShareNetworkFill className="work-icon" />
-            Telecom Tech
-          </h3>
-          <p className="work-company">SCC, LLC</p>
-          <p className="work-duration">
-            Dates of Employment: August 2015 - May 2020
-          </p>
-          <p className="work-description">
-            Conducted service calls involving telecommunications and network
-            troubleshooting, as well as installations. Gained hands-on
-            experience in fiber optic installation and structured cabling,
-            including UTP/STP category cables.
-          </p>
-        </div>
-      </section>
-      {/* Education Section */}
-      <section className="education">
-        <h2 className="section-heading">
-          <FaGraduationCap className="section-icon" />
-          Education
-        </h2>
-        <div className="education-item">
-          <h3 className="education-title">
-            Bachelor of Science in Cybersecurity
-          </h3>
-          <p className="education-institution">Southern Nazarene University</p>
-          <p className="education-duration">
-            Expected Graduation: December 2025
-          </p>
-        </div>
-        <div className="education-item">
-          <h3 className="education-title">Web Development Certificate</h3>
-          <p className="education-duration">
-            6 Month immersive web development bootcamp
-          </p>
-          <p className="education-institution">
-            University of Oklahoma & Full Stack Academy
-          </p>
+    <Box sx={{ minHeight: "100vh", py: 6 }}>
+      <Container maxWidth="lg">
+        <Typography
+          variant="h3"
+          component="h2"
+          style={{ fontWeight: 600, marginBottom: "32px" }}
+        >
+          Education <span style={{ color: "#1976d2" }}>History</span>
+        </Typography>
 
-          <p className="education-duration">Completed: December 2023</p>
-        </div>
-      </section>
-    </div>
+        {/* Education Item 1 */}
+        <Box
+          sx={{
+            p: 3,
+            border: "1px solid #ddd",
+            borderRadius: 2,
+            boxShadow: 2,
+            transition: "transform 0.3s ease-in-out",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+            marginBottom: "32px", // Space between the cards
+          }}
+        >
+          <Typography variant="h6" style={{ fontWeight: 500 }}>
+            Bachelor of Science in Cybersecurity
+          </Typography>
+          <Typography variant="body1" style={{ marginBottom: "8px" }}>
+            Southern Nazarene University
+          </Typography>
+          <Typography variant="body2">
+            Expected Graduation: December 2025
+          </Typography>
+        </Box>
+
+        {/* Education Item 2 */}
+        <Box
+          sx={{
+            p: 3,
+            border: "1px solid #ddd",
+            borderRadius: 2,
+            boxShadow: 2,
+            transition: "transform 0.3s ease-in-out",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+        >
+          <Typography variant="h6" style={{ fontWeight: 500 }}>
+            Web Development Certificate
+          </Typography>
+          <Typography variant="body1" style={{ marginBottom: "8px" }}>
+            University of Oklahoma & Full Stack Academy
+          </Typography>
+          <Typography variant="body2" style={{ marginBottom: "8px" }}>
+            6-month immersive web development bootcamp
+          </Typography>
+          <Typography variant="body2">Completed: December 2023</Typography>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

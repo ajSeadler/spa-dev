@@ -1,3 +1,4 @@
+import { Box, Container, Grid, Typography, Button, Chip } from "@mui/material";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
@@ -31,82 +32,144 @@ const projects = [
 
 const Projects = () => {
   return (
-    <>
-      <section className="projects">
-        <div className="projects-container">
-          <h2 className="projects-heading">Projects</h2>
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card">
+    <Box sx={{ py: 6 }}>
+      <Container maxWidth="lg">
+        <Typography variant="h3" component="h2" sx={{ fontWeight: 600, mb: 4 }}>
+          Project <span style={{ color: "#1976d2" }}>History</span>
+        </Typography>
+
+        <Grid container spacing={4}>
+          {projects.map((project, index) => (
+            <Grid item xs={12} md={4} key={index}>
+              <Box
+                sx={{
+                  border: "1px solid #ddd",
+                  borderRadius: 2,
+                  boxShadow: 2,
+                  overflow: "hidden",
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": { transform: "scale(1.05)" },
+                }}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="project-image"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
                 />
-                <div className="project-content">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-title-link"
+                <Box sx={{ p: 3 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 500,
+                      display: "flex",
+                      alignItems: "center",
+                    }}
                   >
-                    <h3 className="project-title">
-                      {project.title}{" "}
-                      <span className="project-link-icon">
-                        <FaExternalLinkAlt />
-                      </span>
-                    </h3>
-                  </a>
-                  <p className="project-description">{project.description}</p>
-                  <div className="project-tech-stack">
-                    {project.techStack.map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-badge">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="project-links">
                     <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      {project.title}{" "}
+                      <FaExternalLinkAlt
+                        style={{ marginLeft: "8px", color: "#1976d2" }}
+                      />
+                    </a>
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 2 }}>
+                    {project.description}
+                  </Typography>
+                  <Box sx={{ mb: 2 }}>
+                    {project.techStack.map((tech, techIndex) => (
+                      <Chip
+                        key={techIndex}
+                        label={tech}
+                        sx={{ marginRight: 1, mb: 1 }}
+                        variant="outlined"
+                        color="primary"
+                      />
+                    ))}
+                  </Box>
+                  <Box sx={{ display: "flex", gap: 2 }}>
+                    <Button
+                      variant="contained"
+                      color="primary"
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-repo-link"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        textTransform: "none",
+                      }}
                     >
-                      <FaGithub className="icon" />
-                    </a>
+                      <FaGithub />
+                      Repo
+                    </Button>
                     {project.link !== "#" && (
-                      <a
+                      <Button
+                        variant="outlined"
+                        color="primary"
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-demo-link"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1,
+                          textTransform: "none",
+                        }}
                       >
                         Demo
-                      </a>
+                      </Button>
                     )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="call-to-action">
-        <h2 className="cta-heading">Let’s Collaborate</h2>
-        <p className="cta-description">
-          Interested in working together or learning more about my journey? Feel
-          free to reach out!
-        </p>
-        <div className="button-group">
-          <a href="/resume.pdf" className="cta-button">
-            View My Github
-          </a>
-          <a href="https://linkedin.com/in/yourprofile" className="cta-button">
-            Connect on LinkedIn
-          </a>
-        </div>
-      </section>
-    </>
+                  </Box>
+                </Box>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+
+        <Box sx={{ mt: 6, textAlign: "center" }}>
+          <Typography variant="h4" sx={{ fontWeight: 600, mb: 2 }}>
+            Let’s Collaborate
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 4 }}>
+            Interested in working together or learning more about my journey?
+            Feel free to reach out!
+          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              href="/resume.pdf"
+              sx={{ textTransform: "none" }}
+            >
+              View My Github
+            </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              href="https://linkedin.com/in/yourprofile"
+              sx={{ textTransform: "none" }}
+            >
+              Connect on LinkedIn
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

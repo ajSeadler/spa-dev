@@ -2,8 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+
 
 html {
   scroll-behavior: smooth;
@@ -70,23 +72,21 @@ body {
   color: var(--accent-color);
 }
 
-.time-display {
+/* .time-display {
   font-weight: bold;
-}
+} */
 
 /* Nav Links */
 .nav-links {
   display: flex;
   list-style: none;
-  font-weight: bold;
-  gap: 2rem;
+
+  gap: 1rem;
 }
 
 .nav-links .nav-link.active-link {
-  color: var(--link-color);
-  /* Active link color */
-  font-weight: bold;
-
+  color: grey;
+  text-decoration: underline;
 }
 
 .nav-links .nav-link {
@@ -102,8 +102,7 @@ body {
 }
 
 .nav-links .nav-link:hover {
-  background-color: var(--hover-effect);
-  color: var(--link-color);
+  text-decoration: underline;
 }
 
 .nav-links .icon {
@@ -228,7 +227,7 @@ h1 .highlight {
   color: var(--button-text);
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 600;
+
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-dark);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
@@ -321,6 +320,7 @@ h1 .highlight {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.4rem;
 }
+
 
 
 .skills-list li {
