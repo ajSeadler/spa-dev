@@ -59,6 +59,15 @@ const Home = () => {
     };
   }, [currentGreetingIndex, currentText, isDeleting, greetings]);
 
+  // Function to handle smooth scroll to the About section
+  const handleLearnMoreClick = (e) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section className="home" id="home">
@@ -67,14 +76,14 @@ const Home = () => {
             {currentText}, i'm<span className="highlight"> AJ</span>
           </h1>
           <p className="subtitle">Cybersecurity Enthusiast & Web Developer</p>
-          <a href="#about" className="cta">
+          <a href="#about" className="cta" onClick={handleLearnMoreClick}>
             Learn More <FaChevronDown className="cta-icon" />
           </a>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="about-section">
+      <section id="about" className="about-section">
         <About />
       </section>
     </>

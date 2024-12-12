@@ -21,12 +21,13 @@ const projects = [
     techStack: ["React.js", "VexFlow", "JavaScript", "CSS", "Node.js"],
   },
   {
-    title: "Chat Application",
-    description: "Real-time chat app with end-to-end encryption.",
+    title: "Disco Stranger Band",
+    description:
+      "A website I designed and developed for Disco Stranger, a local Oklahoma City band. The site includes an automated email feature, making it easy for venues to book performances.",
     link: "#",
     repo: "https://github.com/example/chat-application",
     image: "/ds-site.png",
-    techStack: ["Socket.IO", "Express", "React"],
+    techStack: ["React.js", "CSS", "Node.js"],
   },
 ];
 

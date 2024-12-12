@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
+import Timeline from "./Timeline";
 
 const Education = () => {
   return (
@@ -62,6 +63,7 @@ const Education = () => {
           <Typography variant="body2">Completed: December 2023</Typography>
         </Box>
       </Container>
+      <Timeline />
     </Box>
   );
 };
