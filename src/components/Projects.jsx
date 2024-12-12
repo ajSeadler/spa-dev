@@ -12,6 +12,15 @@ const projects = [
     techStack: ["React.js", "Postgres", "Express.js", "Node.js"],
   },
   {
+    title: "Network Speed Test",
+    description:
+      "This project is a web-based Internet Speed Test app built with Flask (Python) for the backend and HTML/CSS/JavaScript for the frontend. It allows users to test their internet speed in real time, displaying results with a sleek, responsive design.",
+    link: "#",
+    repo: "https://github.com/example/portfolio-website",
+    image: "/network-speed.png",
+    techStack: ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+  },
+  {
     title: "Circle of Fifths Viewer",
     description:
       "An interactive Circle of Fifths tool to explore musical key relationships, view notation, and discover chords for each scale.",
@@ -41,7 +50,7 @@ const Projects = () => {
 
         <Grid container spacing={4}>
           {projects.map((project, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} md={6} key={index}>
               <Box
                 sx={{
                   border: "1px solid #ddd",
